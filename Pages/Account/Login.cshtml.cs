@@ -26,7 +26,7 @@ namespace Autenticacion.Pages.Account
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, "admin"),
-                    new Claim(ClaimTypes.Email, User.Email),
+                    new Claim(ClaimTypes.Email,User.Email),
                 }; 
 
                 // se asocian los claims creados a un nombre de código
@@ -36,7 +36,7 @@ namespace Autenticacion.Pages.Account
 
                 // se registra exitosamente la autenticación y se crea la cookie en el navegador
                 await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
-                return RedirectToPage("./Index");
+                return RedirectToPage("/Index");
             }
 
             return Page();
